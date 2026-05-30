@@ -23,6 +23,8 @@ def print_dict(word_count, more_than_one=0):
         if more_than_one:
             if value > 1:
                 print(f'{key} -> {value}')
+        else:
+            print(f'{key} -> {value}')
 
 def find_most_often(word_count):
     cnt = 0
@@ -57,10 +59,10 @@ if __name__ == "__main__":
 
     stopwords = ["и", "в", "на", "the", "a"]
 
-    word_count = count_words(text2, 1)
+    word_count = count_words(text1, 0)
     m_key, m_value = find_most_often(word_count)
     unique = count_unique(word_count)
 
-    print_dict(word_count, 1)
+    print_dict(word_count, 0)
     print(f"Most often word is: {m_key} -> {m_value}")
     print(f"Amount of unique words: {unique}")
